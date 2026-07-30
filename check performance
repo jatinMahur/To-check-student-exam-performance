@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class StudentPerformance {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        // Input
+        System.out.print("Enter Student Name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter Marks (out of 100): ");
+        int marks = sc.nextInt();
+
+        // Validation
+        if (marks < 0 || marks > 100) {
+            System.out.println("Invalid Marks! Please enter marks between 0 and 100.");
+            return;
+        }
+
+        // Performance Evaluation
+        String grade, performance;
+
+        if (marks >= 90) {
+            grade = "A+";
+            performance = "Excellent";
+        } else if (marks >= 80) {
+            grade = "A";
+            performance = "Very Good";
+        } else if (marks >= 70) {
+            grade = "B";
+            performance = "Good";
+        } else if (marks >= 60) {
+            grade = "C";
+            performance = "Average";
+        } else if (marks >= 40) {
+            grade = "D";
+            performance = "Needs Improvement";
+        } else {
+            grade = "F";
+            performance = "Fail";
+        }
+
+        // Output
+        System.out.println("\n----- Student Performance Report -----");
+        System.out.println("Student Name : " + name);
+        System.out.println("Marks        : " + marks + "/100");
+        System.out.println("Percentage   : " + marks + "%");
+        System.out.println("Grade        : " + grade);
+        System.out.println("Performance  : " + performance);
+
+        sc.close();
+    }
+}
